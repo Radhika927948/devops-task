@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('clone Repo') {
+            steps {
+                git 'https://github.com/Radhika927948/devops-task.git'
+            }
+        }
+        stage('Deploy to') {
+            steps {
+                sh 'cp -r * /var/www/html/'
+            }
+        }
+    }
+}
